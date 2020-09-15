@@ -73,7 +73,7 @@ namespace Lab1
                 }
                 else
                 {
-                    Console.WriteLine("You have entered an option that does not corrospond to either alternative. Do you want to do it again? Type [Y] Yes, [N] No");
+                    Console.WriteLine("You have entered an option that does not correspond to either alternative. Do you want to do it again? Type [Y] Yes, [N] No");
                     userAgain = Console.ReadLine().ToUpper();
                 }
             }
