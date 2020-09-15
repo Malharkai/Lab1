@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,9 +24,9 @@ namespace Lab1
             {
                 if (Char.IsNumber(input, i))
                 {
-                    
+
                     char bookend = input[i];
-                    for (int j = i+1; j < input.Length; j++)
+                    for (int j = i + 1; j < input.Length; j++)
                     {
                         if (!Char.IsNumber(input, j))
                         {
@@ -35,7 +35,7 @@ namespace Lab1
                         if (input[j] == bookend)
                         {
                             string pre = input.Substring(0, i);
-                            string mid = input.Substring(i, j - i+1);
+                            string mid = input.Substring(i, j - i + 1);
                             string end = input.Substring(j + 1, input.Length - j - 1);
 
                             Console.ForegroundColor = ConsoleColor.Gray;
@@ -45,10 +45,19 @@ namespace Lab1
                             Console.ForegroundColor = ConsoleColor.Gray;
                             Console.WriteLine(end);
 
-                            sum += long.Parse(mid);
-
+                            try
+                            {
+                                sum += long.Parse(mid);
+                            }
+                            catch
+                            {
+                                Console.ForegroundColor = ConsoleColor.Black;
+                                Console.WriteLine("The calcluator ran in to a problem due to the size of the number. \n Please press any key and try again with a string with smaller amount of numbers");
+                                Console.ReadKey();
+                                Main(null);
+                            }
                             break;
-                        }                        
+                        }
                     }
                 }
             }
@@ -61,15 +70,15 @@ namespace Lab1
             {
                 if (userAgain == "Y")
                 {
-                    
+
                     Main(null);
-                    break;
+                   
                 }
                 else if (userAgain == "N")
                 {
                     Console.WriteLine("Goodbye! Press any key to exit.");
                     Console.ReadKey();
-                    break;
+                    System.Environment.Exit(0);
                 }
                 else
                 {
