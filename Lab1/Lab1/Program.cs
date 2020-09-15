@@ -52,7 +52,7 @@ namespace Lab1
                             catch
                             {
                                 Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("The calcluator ran in to a problem due to the size of the number. \n Please press any key and try again with a string with smaller amount of numbers");
+                                Console.WriteLine("The calculator ran in to a problem due to the size of the number. \n Please press any key and try again with a string with smaller amount of numbers");
                                 Console.ReadKey();
                                 Main(null);
                             }
